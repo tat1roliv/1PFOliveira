@@ -10,6 +10,7 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { MainContentComponent } from './components/main-content/main-content.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { StudentsListComponent } from './components/students-list/students-list.component';
 
 @NgModule({
     declarations: [
@@ -17,7 +18,8 @@ import { FooterComponent } from './components/footer/footer.component';
         ToolbarComponent,
         NavbarComponent,
         MainContentComponent,
-        FooterComponent
+        FooterComponent,
+        StudentsListComponent
     ],
     providers: [],
     bootstrap: [AppComponent],
