@@ -1,0 +1,18 @@
+.bg-light-edit {
+  background-color: #E6E9F0;
+}
+
+section {
+  padding: 40px 0rem;
+}
+
+.full-fold {
+  height: auto;
+  min-height: 80vh;
+}
+
+.navbar-content{
+  padding: 22px 8px 20px 8px!important;
+  border-radius: 8px ;
+}
+
