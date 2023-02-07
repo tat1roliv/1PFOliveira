@@ -16,30 +16,35 @@ export class StudentsListComponent {
 
 students: Student[] = [
     {
+      id_: '1',
       name: 'Ada',
       lastName: 'Lovelace',
       email: 'ada@test.com',
       course: 'Angular',
     },
     {
+      id_: '2',
       name: 'Alan',
       lastName: 'Turing',
       email: 'a.turing@test.com',
       course: 'C',
     },
     {
+      id_: '3',
       name: 'Robert',
       lastName: 'Martin',
       email: 'unclebob@test.com',
       course: 'Java',
     },
     {
+      id_: '4',
       name: 'Tim',
       lastName: 'Berners-Lee ',
       email: 'tim@test.com',
       course: 'React',
     },
     {
+      id_: '5',
       name: 'Grace',
       lastName: 'Hopper',
       email: 'hopper@test.com',
@@ -53,7 +58,7 @@ students: Student[] = [
   dataSource: MatTableDataSource<Student> = new MatTableDataSource<Student>(this.students);
 
   //table cols header data
-  tableColumns: string[] = [ 'name' , 'lastName' , 'email' , 'course', 'actions'];
+  tableColumns: string[] = [ 'id_', 'name' , 'lastName' , 'email' , 'course', 'actions'];
 
   handleEditStudent(){
     console.log('edit estudent')
@@ -61,11 +66,14 @@ students: Student[] = [
 
   handleRemove(){
     console.log('remove student')
+
   }
 
-  //(click)="onRowClicked(row)"
+
   onRowClicked(row: any) {
     console.log('Row clicked: ', row);
+    console.log(this.students.toString());
+
   }
 
 }
