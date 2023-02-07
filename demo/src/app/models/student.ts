@@ -3,5 +3,4 @@ export interface Student{
     lastName: string;
     email: string;
     course: string;
-    isActive: boolean;
   }

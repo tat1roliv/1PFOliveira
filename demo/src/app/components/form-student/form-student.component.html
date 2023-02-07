@@ -1,0 +1,26 @@
+<h2 class="mt-5 pb-0 mb-0">Login Student</h2>
+<span class="text-danger">This will be ate a login page when it's possible to handle routes</span>
+
+<form [formGroup]="formLogin" class="container my-3" (ngSubmit)="handleLogin()">
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input formControlName="email_" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <!--check-->
+    <div class="text-muted" *ngIf="formLogin.controls['email_'].dirty && formLogin.controls['email_'].valid" >accepted format</div>
+    <div class="text-muted" *ngIf="formLogin.controls['email_'].dirty && formLogin.controls['email_'].errors?.['required']" >This field is required</div>
+    <div class="text-muted" *ngIf="formLogin.controls['email_'].dirty && formLogin.controls['email_'].errors?.['email']">Incorrect format (Must have @)</div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input formControlName="password_" type="password" class="form-control" id="exampleInputPassword1">
+    <!--check-->
+    <div class="text-muted" *ngIf="formLogin.controls['password_'].dirty && formLogin.controls['password_'].valid">accepted format</div>
+    <div class="text-muted" *ngIf="formLogin.controls['password_'].dirty && formLogin.controls['password_'].errors?.['required']">This field is required</div>
+    <div class="text-muted" *ngIf="formLogin.controls['password_'].dirty && formLogin.controls['password_'].errors?.['minlength']">Incorrect format (min.5)</div>
+  </div>
+
+  <button type="submit" class="btn btn-primary" [disabled]="formLogin.invalid">Enter</button>
+  <button type="reset" class="btn mx-2">Reset</button>
+
+</form>
+

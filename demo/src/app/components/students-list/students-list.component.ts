@@ -3,6 +3,8 @@ import { Student } from '../../models/student';
 
 import { MatTableDataSource } from '@angular/material/table';
 
+//import { Input, Output , EventEmitter } from '@angular/core';
+
 @Component({
   selector: 'app-students-list',
   templateUrl: './students-list.component.html',
@@ -12,42 +14,36 @@ import { MatTableDataSource } from '@angular/material/table';
 
 export class StudentsListComponent {
 
-
 students: Student[] = [
     {
       name: 'Ada',
       lastName: 'Lovelace',
       email: 'ada@test.com',
       course: 'Angular',
-      isActive: true,
     },
     {
       name: 'Alan',
       lastName: 'Turing',
       email: 'a.turing@test.com',
       course: 'C',
-      isActive: true,
     },
     {
       name: 'Robert',
       lastName: 'Martin',
       email: 'unclebob@test.com',
       course: 'Java',
-      isActive: true,
     },
     {
       name: 'Tim',
       lastName: 'Berners-Lee ',
       email: 'tim@test.com',
       course: 'React',
-      isActive: false,
     },
     {
       name: 'Grace',
       lastName: 'Hopper',
       email: 'hopper@test.com',
       course: 'Cobol',
-      isActive: true,
     },
 
 
@@ -57,8 +53,19 @@ students: Student[] = [
   dataSource: MatTableDataSource<Student> = new MatTableDataSource<Student>(this.students);
 
   //table cols header data
-  tableColumns: string[] = [ 'name' , 'lastName' , 'email' , 'course', 'isActive' , 'actions'];
+  tableColumns: string[] = [ 'name' , 'lastName' , 'email' , 'course', 'actions'];
 
-  //constructor(private dialog: MatDialog){}
+  handleEditStudent(){
+    console.log('edit estudent')
+  }
+
+  handleRemove(){
+    console.log('remove student')
+  }
+
+  //(click)="onRowClicked(row)"
+  onRowClicked(row: any) {
+    console.log('Row clicked: ', row);
+  }
 
 }
