@@ -1,9 +1,7 @@
-<h2>Students</h2>
 
 <mat-card>
-
   <mat-toolbar>
-    <span>Active students</span>
+    <h2>Students List</h2>
   </mat-toolbar>
 
   <table mat-table [dataSource]="dataSource">
@@ -53,7 +51,7 @@
 
     <!-- rows -->
     <tr mat-header-row *matHeaderRowDef="tableColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: tableColumns" (click)="onRowClicked(row)"></tr>
+    <tr mat-row *matRowDef="let row; columns: tableColumns"></tr>
 
   </table>
 
