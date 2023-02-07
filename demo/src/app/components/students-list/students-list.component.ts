@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Student } from '../../models/student';
-
+import { Observable } from 'rxjs';
 import { MatTableDataSource } from '@angular/material/table';
 
 import { StudentService } from '../../services/student.service';
@@ -16,6 +16,7 @@ import { StudentService } from '../../services/student.service';
 export class StudentsListComponent {
 
   students: Student[] = [];
+  //students: Observable<Student[]>;
 
   //table cols header data
   tableColumns: string[] = [ 'id_', 'name' , 'lastName' , 'email' , 'course', 'actions'];
@@ -28,7 +29,7 @@ export class StudentsListComponent {
   //dataSource: MatTableDataSource<Student> = new MatTableDataSource<Student>(this.students);
 
   dataSource: MatTableDataSource<Student> = new MatTableDataSource<Student>(this.studentService.list());
-  
+
   handleEditStudent(){
     console.log('edit estudent')
   }

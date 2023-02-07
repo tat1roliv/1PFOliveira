@@ -2,12 +2,21 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Student } from '../models/student';
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class StudentService {
 
+  /*public API = '/demo/src/assets/db.json';*/
+
   constructor(public httpClient: HttpClient) { }
+
+  /*
+  list() {
+    return this.httpClient.get<Student[]>(this.API);
+  }
+  */
 
   list(): Student[] {
     return [
