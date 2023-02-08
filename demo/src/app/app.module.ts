@@ -15,6 +15,7 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { MaterialModule } from './material.module';
 import { StudentNamePipe } from './pipes/student-name.pipe';
 import { TitleSizeDirective } from './directives/title-size.directive';
+import { StudentsTempComponent } from './components/students-temp/students-temp.component';
 
 
 
@@ -29,6 +30,7 @@ import { TitleSizeDirective } from './directives/title-size.directive';
         FormStudentComponent,
         StudentNamePipe,
         TitleSizeDirective,
+        StudentsTempComponent,
 
     ],
     providers: [],
