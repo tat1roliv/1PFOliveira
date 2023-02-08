@@ -1,9 +1,9 @@
 <h2 appTitleSize >Students Temp</h2>
 
-<ul>
-  <li *ngFor="let student of studentsTemp" class="card card-edit mb-2 bg-light">
-    <div class="row d-flex justify-content-center align-items-center p-4">
-      <div class="col-12">
+<ul class="px-0">
+  <li *ngFor="let student of studentsTemp" class="card card-edit mb-2 bg-light ">
+    <div class="row d-flex justify-content-center align-items-center p-4 ">
+      <div class="col-12 px-0">
         <p class="card-text"><strong>Id:</strong> {{ student.id_ }} </p>
         <p class="card-text"><strong>Name:</strong> {{ student | studentName }} </p>
         <p class="card-text"><strong>E-mail:</strong> {{ student.email }} </p>
