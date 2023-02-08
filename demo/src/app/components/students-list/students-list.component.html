@@ -15,14 +15,14 @@
     <!-- col name -->
     <ng-container matColumnDef="name">
       <th mat-header-cell *matHeaderCellDef>Name</th>
-      <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+      <td mat-cell *matCellDef="let element">{{ element.name  | studentName }} {{ element.lastName }}</td>
     </ng-container>
 
     <!-- col lastname -->
-    <ng-container matColumnDef="lastName">
+    <!--ng-container matColumnDef="lastName">
       <th mat-header-cell *matHeaderCellDef>Last name</th>
-      <td mat-cell *matCellDef="let element">{{ element.lastName }}</td>
-    </ng-container>
+      <td mat-cell *matCellDef="let element">{{ element.lastName }} </td>
+    </!--ng-container-->
 
     <!-- col email -->
     <ng-container matColumnDef="email">

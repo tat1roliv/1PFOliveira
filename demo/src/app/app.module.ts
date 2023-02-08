@@ -13,6 +13,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { StudentsListComponent } from './components/students-list/students-list.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { MaterialModule } from './material.module';
+import { StudentNamePipe } from './pipes/student-name.pipe';
 
 
 
@@ -25,6 +26,7 @@ import { MaterialModule } from './material.module';
         FooterComponent,
         StudentsListComponent,
         FormStudentComponent,
+        StudentNamePipe,
 
     ],
     providers: [],

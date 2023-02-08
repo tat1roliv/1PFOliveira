@@ -19,15 +19,13 @@ export class StudentsListComponent {
   //students: Observable<Student[]>;
 
   //table cols header data
-  tableColumns: string[] = [ 'id_', 'name' , 'lastName' , 'email' , 'course', 'actions'];
+  tableColumns: string[] = [ 'id_', 'name' ,  'email' , 'course', 'actions'];
 
   constructor(public studentService: StudentService) {
     this.students = this.studentService.list();
   }
 
   //instance table data / angular material
-  //dataSource: MatTableDataSource<Student> = new MatTableDataSource<Student>(this.students);
-
   dataSource: MatTableDataSource<Student> = new MatTableDataSource<Student>(this.studentService.list());
 
   handleEditStudent(){
@@ -36,7 +34,6 @@ export class StudentsListComponent {
 
   handleRemove(){
     console.log('remove student')
-
   }
 
   //testing
