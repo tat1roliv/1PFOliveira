@@ -7,32 +7,22 @@ import { FormControl, FormGroup , Validators} from '@angular/forms';
   styleUrls: ['./form-student.component.css']
 })
 export class FormStudentComponent {
-  formLogin: FormGroup;
+  formSubscription: FormGroup;
 
   constructor(){
-
     let controles: any = {
+      name_: new FormControl('', [ Validators.required , Validators.minLength(2) ]),
+      lastName_: new FormControl('', [ Validators.required, Validators.minLength(3)   ]),
       email_: new FormControl('', [ Validators.required , Validators.email  ]),
-      password_: new FormControl('', [ Validators.required , Validators.minLength(5) ]),
     }
 
-    this.formLogin = new FormGroup(controles);
-  }
-
-  handleLogin(){
-    //console.log('login', this.formLogin);
-
-    //check required fields
-    if(this.formLogin.controls['email_'].errors?.['required']){
-      console.log('This field is required');
-    }
-
-    if(this.formLogin.controls['password_'].errors?.['required']){
-      console.log('This field is required');
-    }
+    this.formSubscription = new FormGroup(controles);
 
   }
 
+  handleSubscription(){
+    console.log('login', this.formSubscription);
+  }
 }
 
 
