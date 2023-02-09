@@ -13,14 +13,10 @@ export class StudentsTempComponent {
 
  @Input() studentsTemp: Student[] = [];
 
-  //studentsTemp: Student[] = [];
-
   constructor(public studentService: StudentService) {
-    //this.studentsTemp = this.studentService.list();
     this.studentsTemp = this.studentService.students;
   }
 
-  /*
   @Output() outStudent: EventEmitter<Student> = new EventEmitter<Student>();
 
   id_!: string;
@@ -37,10 +33,9 @@ export class StudentsTempComponent {
       email: this.email,
       course: this.course,
     }
-    console.log('agregando estudiante' , newStudent);
-
-    this.outStudent.emit(newStudent);
+    //console.log('add student' , newStudent);
+    this.studentService.addStudent(newStudent);
   }
 
-  */
+
 }

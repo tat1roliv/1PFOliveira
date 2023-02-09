@@ -11,6 +11,7 @@ export class AppComponent {
   title = 'demo';
 
   constructor( public studentService: StudentService ){ }
+
   addEstudiante(){
     let newStudent: Student = {
       id_: 'teste',
@@ -21,4 +22,5 @@ export class AppComponent {
     }
     this.studentService.addStudent(newStudent);
   }
+  
 }
