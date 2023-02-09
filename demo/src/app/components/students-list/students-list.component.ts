@@ -16,17 +16,16 @@ import { StudentService } from '../../services/student.service';
 export class StudentsListComponent {
 
   students: Student[] = [];
-  //students: Observable<Student[]>;
 
   //table cols header data
   tableColumns: string[] = [ 'id_', 'name' ,  'email' , 'course', 'actions'];
 
   constructor(public studentService: StudentService) {
-    this.students = this.studentService.list();
+    this.students = this.studentService.students;
   }
 
   //instance table data / angular material
-  dataSource: MatTableDataSource<Student> = new MatTableDataSource<Student>(this.studentService.list());
+  dataSource: MatTableDataSource<Student> = new MatTableDataSource<Student>(this.studentService.students);
 
   handleEditStudent(){
     console.log('edit estudent')

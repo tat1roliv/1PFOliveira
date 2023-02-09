@@ -8,55 +8,53 @@ import { Student } from '../models/student';
 })
 export class StudentService {
 
-  /*public API = '/demo/src/assets/db.json';*/
+public students: Student[] = [
+  {
+    id_: '1',
+    name: 'Ada',
+    lastName: 'Lovelace',
+    email: 'ada@test.com',
+    course: 'Angular',
+  },
+  {
+    id_: '2',
+    name: 'Alan',
+    lastName: 'Turing',
+    email: 'a.turing@test.com',
+    course: 'C',
+  },
+  {
+    id_: '3',
+    name: 'Robert',
+    lastName: 'Martin',
+    email: 'unclebob@test.com',
+    course: 'Java',
+  },
+  {
+    id_: '4',
+    name: 'Tim',
+    lastName: 'Berners-Lee ',
+    email: 'tim@test.com',
+    course: 'React',
+  },
+  {
+    id_: '5',
+    name: 'Grace',
+    lastName: 'Hopper',
+    email: 'hopper@test.com',
+    course: 'Cobol',
+  },
+];
 
-  constructor(public httpClient: HttpClient) { }
+constructor() { }
 
-  /*
-  list() {
-    return this.httpClient.get<Student[]>(this.API);
-  }
-  */
+getSudents(): Array<Student>{
+  return this.students;
+}
 
-  list(): Student[] {
-    return [
-      {
-        id_: '1',
-        name: 'Ada',
-        lastName: 'Lovelace',
-        email: 'ada@test.com',
-        course: 'Angular',
-      },
-      {
-        id_: '2',
-        name: 'Alan',
-        lastName: 'Turing',
-        email: 'a.turing@test.com',
-        course: 'C',
-      },
-      {
-        id_: '3',
-        name: 'Robert',
-        lastName: 'Martin',
-        email: 'unclebob@test.com',
-        course: 'Java',
-      },
-      {
-        id_: '4',
-        name: 'Tim',
-        lastName: 'Berners-Lee ',
-        email: 'tim@test.com',
-        course: 'React',
-      },
-      {
-        id_: '5',
-        name: 'Grace',
-        lastName: 'Hopper',
-        email: 'hopper@test.com',
-        course: 'Cobol',
-      },
-    ]
-  }
-
+addStudent(student: Student){
+  this.students.push(student);
+  console.log('added', this.students);
+}
 
 }

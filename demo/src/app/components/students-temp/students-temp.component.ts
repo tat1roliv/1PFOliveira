@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Student } from '../../models/student';
 import { StudentService } from '../../services/student.service';
+import { Input, Output , EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-students-temp',
@@ -10,10 +11,36 @@ import { StudentService } from '../../services/student.service';
 
 export class StudentsTempComponent {
 
-  studentsTemp: Student[] = [];
+ @Input() studentsTemp: Student[] = [];
+
+  //studentsTemp: Student[] = [];
 
   constructor(public studentService: StudentService) {
-    this.studentsTemp = this.studentService.list();
+    //this.studentsTemp = this.studentService.list();
+    this.studentsTemp = this.studentService.students;
   }
 
+  /*
+  @Output() outStudent: EventEmitter<Student> = new EventEmitter<Student>();
+
+  id_!: string;
+  name!: string;
+  lastName!: string;
+  email!: string;
+  course!: string;
+
+  agregarEstudiante(){
+    let newStudent: Student = {
+      id_: this.id_,
+      name: this.name,
+      lastName: this.lastName,
+      email: this.email,
+      course: this.course,
+    }
+    console.log('agregando estudiante' , newStudent);
+
+    this.outStudent.emit(newStudent);
+  }
+
+  */
 }
