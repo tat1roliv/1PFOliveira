@@ -13,21 +13,27 @@
   </li>
 </ul>
 
-<!--button  class="btn btn-primary"(click)="addEstudiante()">add student test</!--button-->
-
-<div class="form">
-  <div class="row d-flex justify-content-center align-items-center p-4">
-    <div class="col-12 px-0">
+<div class="form card card-edit bg-light p-4">
+  <div class="row d-flex justify-content-start align-items-center">
+    <div class="col-4">
       <input type="text" [(ngModel)]="id_" placeholder="Id" >
+    </div>
+    <div class="col-4">
       <input type="text" [(ngModel)]="name" placeholder="Name">
+    </div>
+    <div class="col-4">
       <input type="text" [(ngModel)]="lastName" placeholder="Last name">
-      <input type="text" [(ngModel)]="email" placeholder="E-mail">
-      <input type="text" [(ngModel)]="course" placeholder="Course">
+    </div>
   </div>
-  <div class="row">
-    <div class="col-12">
-      <button (click)="agregarEstudiante()">Add Student</button>
+  <div class="row d-flex justify-content-start align-items-center mt-3">
+    <div class="col-4 ">
+      <input type="text" [(ngModel)]="email" placeholder="E-mail">
+    </div>
+    <div class="col-4">
+      <input type="text" [(ngModel)]="course" placeholder="Course">
+    </div>
+    <div class="col-4">
+      <button (click)="addStudentTemp()" class="btn btn-primary">Add Student</button>
     </div>
   </div>
 </div>
-

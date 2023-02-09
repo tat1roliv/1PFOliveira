@@ -25,7 +25,7 @@ export class StudentsTempComponent {
   email!: string;
   course!: string;
 
-  agregarEstudiante(){
+  addStudentTemp(){
     let newStudent: Student = {
       id_: this.id_,
       name: this.name,

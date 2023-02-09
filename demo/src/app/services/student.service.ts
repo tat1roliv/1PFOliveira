@@ -54,7 +54,7 @@ getSudents(): Array<Student>{
 
 addStudent(student: Student){
   this.students.push(student);
-  console.log('added', this.students);
+  //console.log('added', this.students);
 }
 
 }
