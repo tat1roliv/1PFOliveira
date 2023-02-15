@@ -56,7 +56,7 @@ constructor() {
     //filter
     from(this.students).pipe(
       filter((student: Student) => student.name === 'Ada')
-    ).subscribe((student: Student) => console.log(' from pipe observable', student));
+    ).subscribe((student: Student) => console.log(' from pipe observable en student.service, filter student.name === Ada', student));
 }
 
 /*
@@ -64,6 +64,7 @@ getSudents(): Array<Student>{
   return this.students;
 }
 */
+
 getSudentsObservable(): Observable<Student[]>{
   return this.students$.asObservable();
 }

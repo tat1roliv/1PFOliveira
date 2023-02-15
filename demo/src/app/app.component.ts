@@ -12,17 +12,4 @@ export class AppComponent {
 
   constructor( public studentService: StudentService ){ }
 
-
-  addStudent(){
-    let newStudent: Student = {
-      id_: 'teste',
-      name: 'teste',
-      lastName: 'teste',
-      email: 'teste@com',
-      course: 'teste',
-    }
-    this.studentService.addStudent(newStudent);
-  }
-
-
 }
