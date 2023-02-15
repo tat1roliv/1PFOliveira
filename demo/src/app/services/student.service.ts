@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 //import { HttpClient } from '@angular/common/http';
 import { Student } from '../models/student';
 
+import { BehaviorSubject, Observable } from 'rxjs';
+import { of , from , filter} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -46,15 +48,40 @@ public students: Student[] = [
   },
 ];
 
-constructor() { }
+public students$!: BehaviorSubject<Student[]>;
 
+constructor() {
+  //observable/subject
+    this.students$ = new BehaviorSubject(this.students);
+    //filter
+    from(this.students).pipe(
+      filter((student: Student) => student.name === 'Ada')
+    ).subscribe((student: Student) => console.log(' from pipe observable', student));
+}
+
+/*
 getSudents(): Array<Student>{
   return this.students;
+}
+*/
+getSudentsObservable(): Observable<Student[]>{
+  return this.students$.asObservable();
+}
+
+getSudentsPromise(): Promise<Student[]>{
+  return new Promise((resolve, reject) => {
+    if(this.students.length > 0){
+      resolve(this.students);
+    }else{
+      reject([]);
+    }
+  });
 }
 
 addStudent(student: Student){
   this.students.push(student);
-  //console.log('added', this.students);
+  this.students$.next(this.students);
+  console.log('added from service', this.students);
 }
 
 

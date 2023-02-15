@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Observable, Subscription } from 'rxjs';
 import { Student } from '../../models/student';
 import { StudentService } from '../../services/student.service';
 import { Input, Output , EventEmitter } from '@angular/core';
@@ -9,12 +10,16 @@ import { Input, Output , EventEmitter } from '@angular/core';
   styleUrls: ['./students-temp.component.css']
 })
 
-export class StudentsTempComponent {
+export class StudentsTempComponent implements OnInit, OnDestroy {
 
  @Input() studentsTemp: Student[] = [];
 
+ studentsTemp$!: Observable<Student[]>;
+
+ suscripcion!: Subscription;
+
   constructor(public studentService: StudentService) {
-    this.studentsTemp = this.studentService.students;
+    //this.studentsTemp = this.studentService.students;
   }
 
   @Output() outStudent: EventEmitter<Student> = new EventEmitter<Student>();
@@ -38,4 +43,17 @@ export class StudentsTempComponent {
   }
 
 
+  ngOnInit() {
+    this.studentsTemp$ = this.studentService.getSudentsObservable();
+    this.suscripcion = this.studentsTemp$.subscribe((students: Student[])=> {
+      this.studentsTemp = students;
+    });
+
+  }
+
+  ngOnDestroy() {
+    this.suscripcion.unsubscribe();
+  }
+
+  
 }
